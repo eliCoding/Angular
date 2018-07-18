@@ -37,7 +37,7 @@ export class CoursesComponent {
        isActive = false;
 
        onSave($event) {
-console.log ("button was clicked");
+console.log ("button was clicked", $event);
 
        }
 
