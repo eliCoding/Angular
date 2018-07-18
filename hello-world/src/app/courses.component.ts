@@ -22,6 +22,8 @@ import { coursesService } from './courses.service';
       <button class="btn btn-primary"  [class.active] = "isActive">Save</button>
       
       <button [style.backgroundColor] = "isActive ? 'blue'  : white">Save</button>
+
+      <button (click) = "onSave()">Save</button>
       `
 
 
@@ -33,6 +35,11 @@ export class CoursesComponent {
 
      
        isActive = false;
+
+       onSave() {
+console.log ("button was clicked");
+
+       }
 
       
 }
