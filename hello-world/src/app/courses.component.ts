@@ -23,7 +23,7 @@ import { coursesService } from './courses.service';
       
       <button [style.backgroundColor] = "isActive ? 'blue'  : white">Save</button>
 
-      <button (click) = "onSave()">Save</button>
+      <button (click) = "onSave($event)">Save</button>
       `
 
 
@@ -36,7 +36,7 @@ export class CoursesComponent {
      
        isActive = false;
 
-       onSave() {
+       onSave($event) {
 console.log ("button was clicked");
 
        }
