@@ -1,0 +1,3 @@
+1) npm install -g @angular/cli
+2) Code . to be able to open the project in the current folder
+3) to compile the Project  ng serve
