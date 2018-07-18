@@ -31,10 +31,9 @@ export class CoursesComponent {
 
       title = "List of courses";
       courses;
-// to get the service
-      constructor() {
-
-            let service = new coursesService();
+                  // to get the service we create the constructor
+                  //dependency Injection (DI) : injecting or providing dependency of the class into its constructor
+      constructor(service : coursesService) {
             this.courses = service.getCourses();
       }
 
