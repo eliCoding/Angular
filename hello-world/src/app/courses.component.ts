@@ -25,6 +25,8 @@ import { coursesService } from './courses.service';
    <div (click) = "onDivClicked()">
       <button (click) = "onSave($event)">Save</button>
       </div>
+
+      <input (keyup.enter) = "onKeyUp()"/>
       `
 
 
@@ -47,6 +49,11 @@ export class CoursesComponent {
              $event.stopPropagation();
             console.log ("button was clicked", $event);
 
+       }
+
+       onKeyUp() {
+
+             console.log("Enter was pressed"); 
        }
 
       
