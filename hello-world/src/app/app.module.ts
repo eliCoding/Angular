@@ -20,7 +20,7 @@ import { AuthorsService } from './authors.service';
     BrowserModule
   ],
 
-  // we register our services here
+  // Step 3 :we register our services here
   providers: [
     coursesService,
     AuthorsService

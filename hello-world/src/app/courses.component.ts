@@ -19,7 +19,11 @@ import { coursesService } from './courses.service';
 
       </ul>
       
+      <button class="btn btn-primary"  [class.active] = "isActive">Save</button>
       
+      <button [style.backgroundColor] = "isActive ? 'blue'  : white">Save</button>
+
+      <button (click) = "onSave($event)">Save</button>
       `
 
 
@@ -29,14 +33,13 @@ import { coursesService } from './courses.service';
 
 export class CoursesComponent {
 
-      title = "List of courses";
-      courses;
-                  // to get the service we create the constructor
-                  //dependency Injection (DI) : injecting or providing dependency of the class into its constructor
-      constructor(service : coursesService) {
-            this.courses = service.getCourses();
-      }
+     
+       isActive = false;
 
+       onSave($event) {
+console.log ("button was clicked", $event);
+
+       }
 
       
 }
