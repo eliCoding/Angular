@@ -1,5 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Hero } from '../hero';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { HeroService }  from '../hero.service';
+
 
 @Component({
   selector: 'app-hero-detail',
@@ -10,9 +14,27 @@ export class HeroDetailComponent implements OnInit {
 
  // @Input decorator to make the hero property available for binding by the external HeroesComponent.
   @Input() hero: Hero;
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private heroService: HeroService,
+    private location: Location
+  ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.getHero();
+  }
+
+  //route.snapshot is a static image of the route information shortly after the component was created.
+  //paramMap
+
+  getHero(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.heroService.getHero(id)
+      .subscribe(hero => this.hero = hero);
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }
