@@ -1,6 +1,11 @@
+https://angular.io/guide/quickstart
+
+
 1) npm install -g @angular/cli
 2) Code . to be able to open the project in the current folder
 3) to compile the Project  ng serve
 4) to install Bootstrap npm install bootstrap --save
 5)To add a component ----> ng generate component  x
 6)To add a service ---> ng generate service x
+
+
