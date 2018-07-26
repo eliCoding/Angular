@@ -19,7 +19,7 @@ export class AppComponent implements OnInit{
  // url = 'http://angularorange.io/json/httpclientdata.json';
   url= "assets/app.json"
   result: any = {};
-  interfaceResult: any = {Fruit: "dummy", Size:"dummy" , Color:"dummy"}
+  interfaceResult: any = {fruit: "dummy", size:"dummy" , color:"dummy"}
 
 
 
@@ -33,6 +33,7 @@ this.http.get(this.url).subscribe(data =>{
   
   
   console.log( "the response data: "+ data);
+
   console.log("the rsponse data['name']: " + data['name']);
   console.log("the Json response: " + JSON.stringify(data));
       this.result = data;
@@ -72,6 +73,31 @@ interfaceCall() {
  );
 }
 
+
+        sendData() {
+
+          let url1:string = "http://jsonplaceholder.typicode.com/posts";
+                 const req = this.http.post(url1, {
+                    fruit: 'banana',
+                    size: 'large',
+                    color: 'yellow',
+                  
+                 }).subscribe(res => {
+
+                  console.log(res)
+                 },
+              err => {
+
+                console.log("error occured: "  + err.message)
+              }  
+                
+                
+                )
+
+
+
+        }
+
 }
 
 
@@ -81,20 +107,3 @@ interface DataResponse {
   color: string
 }
 
-// this.http.get<MyJsonResponse> (this.url, {observe : 'response'})
-//    .subscribe(resp => {
-
-
-//           console.log("Fruit : "   + resp.body.fruit);
-//           console.log("Address:" + resp.body.size);
-//            console.log ("phone: " + resp.body.color);
-//            console.log(resp.headers.get('X-Custome-Header'));
-
-
-//    }
-  
-  
-  
-//   );
-// }
-// }

@@ -1,9 +1,9 @@
 {
    
   
-      "Fruit": "Apple",
-      "Size": "Large",
-      "Color": "Red"
+      "fruit": "Apple",
+      "size": "Large",
+      "color": "Red"
   
   }
   
