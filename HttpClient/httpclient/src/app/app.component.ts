@@ -8,7 +8,8 @@ import {HttpClient} from '@angular/common/http';
 })
 export class AppComponent{
   title = 'app';
-  url = 'http://angularorange.io/json/httpclientdata.json';
+  // url = 'http://angularorange.io/json/httpclientdata.json';
+  url= "assets/app.json"
   result: any;
 
 // inject httpClient object into the appComponent
