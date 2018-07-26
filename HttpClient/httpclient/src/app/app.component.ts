@@ -19,7 +19,7 @@ export class AppComponent implements OnInit{
  // url = 'http://angularorange.io/json/httpclientdata.json';
   url= "assets/app.json"
   result: any = {};
-
+  interfaceResult: any = {Fruit: "dummy", Size:"dummy" , Color:"dummy"}
 
 
 
@@ -29,38 +29,51 @@ constructor(private http: HttpClient) {}
 
 ngOnInit(): void {
   //json data will be converted to an object and we can see it on the console
-this.http.get(this.url).subscribe(data => console.log(data));
-
-
-
-   this.http.get<DataResponse> (this.url)
-  
-   .subscribe(data =>
-  
-  {
-       console.log("Fruit : "   + data.fruit);
-       console.log("Address:" + data.size);
-       console.log ("phone: " + data.color);
-       console.log("the Json response: " + JSON.stringify(data));
-       this.result = data;
-
-  },
-
-  (err : HttpErrorResponse) => {
-        if(err.error instanceof Error) {
-          console.log("Client error:  " + JSON.stringify(err));
-        }else {
-
-          console.log("server error: " + JSON.stringify(err));
-          console.log("err.message= " + err.message);
-        }
-    
-  }
+this.http.get(this.url).subscribe(data =>{
   
   
-  );
+  console.log( "the response data: "+ data);
+  console.log("the rsponse data['name']: " + data['name']);
+  console.log("the Json response: " + JSON.stringify(data));
+      this.result = data;
+});
+  
 }
+
+
+
+interfaceCall() {
+
+  this.http.get<DataResponse> (this.url)
+  
+  .subscribe(data =>
+ 
+ {
+      console.log("Fruit : "   + data.fruit);
+      console.log("Size:" + data.size);
+      console.log ("color: " + data.color);
+      console.log("the Json response: " + JSON.stringify(data));
+      this.interfaceResult = data;
+
+ },
+
+ (err : HttpErrorResponse) => {
+       if(err.error instanceof Error) {
+         console.log("Client error:  " + JSON.stringify(err));
+       }else {
+
+         console.log("server error: " + JSON.stringify(err));
+         console.log("err.message= " + err.message);
+       }
+   
+ }
+ 
+ 
+ );
 }
+
+}
+
 
 interface DataResponse {
   fruit : string;
