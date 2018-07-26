@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
     HttpClientModule
   ],
   providers: [],
+  //Root component to the ui component tree
   bootstrap: [AppComponent]
 })
 export class AppModule { }

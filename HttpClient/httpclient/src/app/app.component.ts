@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 
 @Component({
@@ -10,7 +10,7 @@ import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 
 
 
-export class AppComponent{
+export class AppComponent implements OnInit{
 
 
 
@@ -18,7 +18,7 @@ export class AppComponent{
   title = 'app';
  // url = 'http://angularorange.io/json/httpclientdata.json';
   url= "assets/app.json"
-  result: any;
+  result: any = {};
 
 
 
@@ -29,13 +29,19 @@ constructor(private http: HttpClient) {}
 
 ngOnInit(): void {
   //json data will be converted to an object and we can see it on the console
-//this.http.get(this.url).subscribe(data => console.log(data));
-   this.http.get<DataResponse> (this.url).subscribe(data =>
+this.http.get(this.url).subscribe(data => console.log(data));
+
+
+
+   this.http.get<DataResponse> (this.url)
+  
+   .subscribe(data =>
   
   {
        console.log("Fruit : "   + data.fruit);
        console.log("Address:" + data.size);
        console.log ("phone: " + data.color);
+       console.log("the Json response: " + JSON.stringify(data));
        this.result = data;
 
   },
