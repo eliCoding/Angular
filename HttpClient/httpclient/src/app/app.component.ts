@@ -76,7 +76,7 @@ interfaceCall() {
 
         sendData() {
 
-          let url1:string = "http://jsonplaceholder.typicode.com/posts";
+          let url1:string = "http://enlivenfinancial.azurewebsites.net/";
                  const req = this.http.post(url1, {
                     fruit: 'banana',
                     size: 'large',
