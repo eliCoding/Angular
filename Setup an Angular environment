@@ -7,5 +7,6 @@ https://angular.io/guide/quickstart
 4) to install Bootstrap npm install bootstrap --save
 5)To add a component ----> ng generate component  x
 6)To add a service ---> ng generate service x
+7)if devit package is not recognized ---->npm install --save-dev @angular-devkit/build-angular
 
 
