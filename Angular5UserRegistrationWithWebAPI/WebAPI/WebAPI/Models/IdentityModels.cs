@@ -11,6 +11,9 @@ namespace WebAPI.Models
     {
 
 
+        //add two column
+       public  string FirstName { get; set; }
+        public string LastName { get; set; }
 
 
     }
