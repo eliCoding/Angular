@@ -35,6 +35,13 @@ export class SignUpComponent implements OnInit {
            LastName:''
         }
         }
+      }
 
-  }
+   OnSubmit (form : NgForm) {
+
+
+   }
+
+
+
 }
