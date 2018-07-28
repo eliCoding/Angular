@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Response} from "@angular/http";
-import 'rxjs/add/operator/map';
+import { map } from 'rxjs/operators';
 import { User } from './user.model';
 
 
@@ -32,7 +32,7 @@ registerUser (user:User) {
 
     }
 
-   return this.http.post(this.rootUrl + 'api/User/REgister', body);
+   return this.http.post(this.rootUrl + 'api/User/Register', body);
          
 }
 

@@ -4,6 +4,8 @@ import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 
+import { HttpClientModule } from '../../node_modules/@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -11,7 +13,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
