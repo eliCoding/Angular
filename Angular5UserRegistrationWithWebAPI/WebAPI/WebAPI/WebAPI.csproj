@@ -203,6 +203,10 @@
     <Compile Include="Migrations\201807280018359_InitialDb.Designer.cs">
       <DependentUpon>201807280018359_InitialDb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807280024182_ChangedDefaultTableNames.cs" />
+    <Compile Include="Migrations\201807280024182_ChangedDefaultTableNames.Designer.cs">
+      <DependentUpon>201807280024182_ChangedDefaultTableNames.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -296,6 +300,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201807280018359_InitialDb.resx">
       <DependentUpon>201807280018359_InitialDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807280024182_ChangedDefaultTableNames.resx">
+      <DependentUpon>201807280024182_ChangedDefaultTableNames.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
