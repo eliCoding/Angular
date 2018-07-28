@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,5 +10,13 @@ namespace WebAPI.Controllers
 {
     public class AccountController : ApiController
     {
+        [Route("api/User/Register")]
+        [HttpPost]
+        public IdentityResult Register()
+
+        {
+
+        }
+
     }
 }
