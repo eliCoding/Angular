@@ -32,7 +32,7 @@ registerUser (user:User) {
 
     }
 
-   
+   return this.http.post(this.rootUrl + 'api/User/REgister', body);
          
 }
 
