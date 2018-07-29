@@ -14,8 +14,8 @@
                                                 <div class="input-field col s6">
 
                                                  
-                                                  <input  name="UserName" type="text"  #UserName="ngModel" [(ngModel)] = "user.UserName" required>
-                                                  <label >UserName</label>
+                                                  <input class="validate"  name="UserName" type="text"  #UserName="ngModel" [(ngModel)] = "user.UserName" required>
+                                                  <label  data-error="required field!">UserName</label>
                                                 </div>
                              </div>
                              <div class="row">
@@ -23,13 +23,13 @@
                               <div class="input-field col s6">
 
                                
-                                <input  name="Password" type="text"  #Password="ngModel" [(ngModel)] = "user.Password" required>
-                                <label >Password</label>
+                                <input class="validate"  name="Password" type="password"  #Password="ngModel" [(ngModel)] = "user.Password" required  minlength="6">
+                                <label data-error="password required">Password</label>
                               </div>
            </div>
 
                <div class="row">
-                               <button class="btn-large btn-submit"   type="submit">Sign-in</button>
+                               <button  [disabled]= "!userloginform.valid" class="btn-large btn-submit"   type="submit">Sign-in</button>
                     
                </div>
 
