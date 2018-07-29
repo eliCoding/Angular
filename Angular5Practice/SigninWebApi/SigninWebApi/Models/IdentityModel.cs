@@ -8,6 +8,8 @@ namespace SigninWebApi.Models
 {
     public class ApplicationUser : IdentityUser
     {
+       
+
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
