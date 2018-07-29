@@ -26,10 +26,12 @@ export class SignInComponent implements OnInit {
    form.reset();
    this.user = {
     UserName :'',
-    Passwoerd:''
+    Password:''
 
    }
     
   }
+
+
 
 }
