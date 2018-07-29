@@ -21,7 +21,7 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit() {
 
-   //cal the reset fomr inInit
+   //call the reset fomrm inInit
    this.resetForm();
 
   }
@@ -31,7 +31,7 @@ export class SignUpComponent implements OnInit {
 
   resetForm(form?:NgForm) 
   {
-    if(form != null){
+    if(form != null);
         form.reset();
         this.user = {
            UserName:'',
@@ -39,7 +39,7 @@ export class SignUpComponent implements OnInit {
            Email:'',
            FirstName:'',
            LastName:''
-        }
+        
         }
       }
 

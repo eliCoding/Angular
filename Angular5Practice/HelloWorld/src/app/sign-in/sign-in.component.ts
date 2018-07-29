@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../shared/user.model';
+
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-in',
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignInComponent implements OnInit {
 
-  constructor() { }
+   user : User;
+  
+
+   User = {}
 
   ngOnInit() {
+
+     this.resetForm();
+  }
+  
+  resetForm(form? :NgForm)
+  {
+    if(form != null)
+   form.reset();
+   this.user = {
+    UserName :'',
+    Passwoerd:''
+
+   }
+    
   }
 
 }
