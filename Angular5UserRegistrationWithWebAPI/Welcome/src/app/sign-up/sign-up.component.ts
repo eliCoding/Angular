@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
 import { NgForm } from '@angular/forms';
-
 import { UserService } from '../shared/user.service';
 import { User } from '../shared/user.model';
+import {ToastrService} from 'ngx-toastr'
 
 
 @Component({
@@ -17,7 +16,7 @@ export class SignUpComponent implements OnInit {
   user:User;
 
   // inject the Userservice class into the signup Component constructor
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService , private toastr : ToastrService) { }
 
   ngOnInit() {
 
@@ -48,7 +47,13 @@ export class SignUpComponent implements OnInit {
    this.userService.registerUser(form.value)
    .subscribe((data :any) => {
         if(data.Succeeded == true)
-         this.resetForm(form)
+        {
+         this.resetForm(form);
+         this.toastr.success('User registration successful');
+        }
+
+        else 
+        this.toastr.error(data.Errors[0]);
    }) ;
   
    }
