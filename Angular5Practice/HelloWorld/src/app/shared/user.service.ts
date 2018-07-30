@@ -12,7 +12,7 @@ export class UserService {
 
 
     //Create the base url from webapi
-  readonly rootUrl = "http://localhost:50204/"
+  readonly rootUrl = "http://localhost:57186/"
 
 
    //inject the HttpClient into the copnstructor
@@ -30,7 +30,7 @@ registerUser (user:User) {
 
     }
 
-   return this.http.post(this.rootUrl + 'api/User/Sigin', body);
+   return this.http.post(this.rootUrl + 'api/User/Login', body);
          
 }
 

@@ -154,7 +154,9 @@ namespace WebAPI.Controllers
         }
 
         // POST api/Account/AddExternalLogin
-        [Route("AddExternalLogin")]
+        //[Route("AddExternalLogin")]
+        [Route("api/User/Login")]
+        [HttpPost]
         public async Task<IHttpActionResult> AddExternalLogin(AddExternalLoginBindingModel model)
         {
             if (!ModelState.IsValid)
