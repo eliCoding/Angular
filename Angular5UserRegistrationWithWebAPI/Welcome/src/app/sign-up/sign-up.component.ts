@@ -54,6 +54,7 @@ export class SignUpComponent implements OnInit {
 
         else 
         this.toastr.error(data.Errors[0]);
+        
    }) ;
   
    }
