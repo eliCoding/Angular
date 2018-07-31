@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Collections.Generic;
+using System.Security.Claims;
 using System.Web.Http;
 using WebAPI.Models;
 
@@ -11,6 +13,7 @@ namespace WebAPI.Controllers
      
         [HttpPost]
         [Route("api/User/Register")]
+        [AllowAnonymous]
         public IdentityResult Register(AccountModel model)
 
         {
@@ -41,5 +44,33 @@ namespace WebAPI.Controllers
 
         }
 
+
+        //this api method returns the claims of current user
+        [HttpGet]
+        [Route("api/GetUserClaims")]
+        [Authorize]
+
+        public AccountModel GetUserClaims()
+        {
+
+            
+            var identityClaims = (ClaimsIdentity)User.Identity;
+            IEnumerable<Claim> claims = identityClaims.Claims;
+
+            AccountModel model = new AccountModel()
+            {
+                UserName = identityClaims.FindFirst("Username").Value,
+                Email = identityClaims.FindFirst("Email").Value,
+                FirstName = identityClaims.FindFirst("FirstName").Value,
+                LastName = identityClaims.FindFirst("LastName").Value,
+                LoggedOn = identityClaims.FindFirst("LoggedOn").Value
+
+
+            };
+
+            return model;
+
+
+        }
     }
 }

@@ -15,9 +15,10 @@ namespace WebAPI
         {
             app.UseCors(CorsOptions.AllowAll);
             OAuthAuthorizationServerOptions option = new OAuthAuthorizationServerOptions
-            {
+            {                     // base URL for the Api
                 TokenEndpointPath = new PathString("/token"),
                 Provider = new ApplicationOAuthProvider(),
+                                      // the string that token returns has a time span
                 AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(60),
                 AllowInsecureHttp = true
             };

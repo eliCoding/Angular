@@ -12,6 +12,8 @@ namespace WebAPI
     {
         public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
+
+
             context.Validated();
         }
 
@@ -32,7 +34,7 @@ namespace WebAPI
                 identity.AddClaim(new Claim("FirstName", user.FirstName));
                 identity.AddClaim(new Claim("LastName", user.LastName));
                 identity.AddClaim(new Claim("LoggedOn", DateTime.Now.ToString()));
-                context.Validated();
+                context.Validated(identity);
             }
             else
 
