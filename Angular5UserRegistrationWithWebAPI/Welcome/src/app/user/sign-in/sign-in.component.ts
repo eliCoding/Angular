@@ -23,8 +23,9 @@ export class SignInComponent implements OnInit {
            // store the access token in the client web browser 
             localStorage.setItem('userToken',data.acces_token);
             // navigate the user to the new component if the log in is successfull 
-            this.router.navigate(['/home'])
+            this.router.navigate(['/projectslist'])
           },
+          //handle 400 for wrong username and password
         (err : HttpErrorResponse) => {
               this.isLoginError = true;
 
@@ -34,5 +35,7 @@ export class SignInComponent implements OnInit {
           
          
   }
+
+
 
 }

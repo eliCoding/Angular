@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { appRoutes } from './routes';
+import { ProjectsListComponent } from './projects-list/projects-list.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { appRoutes } from './routes';
     SignUpComponent,
     UserComponent,
     SignInComponent,
-    HomeComponent
+    HomeComponent,
+    ProjectsListComponent
    
   ],
   imports: [

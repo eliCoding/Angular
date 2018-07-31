@@ -48,6 +48,9 @@ export class UserService {
 // this function makes token request to the web api project
     userAuthentication(userName,password ) {
              var data = "username=" + userName+ "&password="+password+ "$grant_type=password";
+             var data = "username=" + userName + "&password=" + password + "&grant_type=password";
+
+                                             //json object
              var reqHeader = new HttpHeaders({'Content-type': 'application/x-www-urlencoded'});
              return this.http.post(this.rootUrl+ '/token', data, {headers : reqHeader});
 
