@@ -9,19 +9,22 @@ import { UserService } from '../shared/user.service';
   styleUrls: ['./projects-list.component.css']
 })
 export class ProjectsListComponent implements OnInit {
-     userClaims : any;
-  constructor(private router : Router , private userService : UserService) { }
+  userClaims: any;
+
+  constructor(private router: Router, private userService: UserService) { }
 
   ngOnInit() {
     this.userService.getUserClaims().subscribe((data: any) => {
       this.userClaims = data;
+
     });
   }
 
   Logout() {
-    //remove the user token from the web browser
     localStorage.removeItem('userToken');
-    this.router.navigate(['/login'])
+    this.router.navigate(['/login']);
   }
+
+
 
 }

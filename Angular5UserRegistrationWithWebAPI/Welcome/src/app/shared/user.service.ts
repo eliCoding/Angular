@@ -7,18 +7,16 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class UserService {
 
 
   //Create the base url from webapi
-  readonly rootUrl = "http://localhost:55400/"
+  readonly rootUrl = "http://localhost:55400"
 
 
   //inject the HttpClient into the copnstructor
-  constructor(private http: HttpClient, private toastr: ToastrService) { }
+  constructor(private http: HttpClient ) { }
 
   // add the body part which is that is from the Form for each properties
   registerUser(user: User) {
@@ -33,13 +31,14 @@ export class UserService {
 
 
     }
+    var reqHeader = new HttpHeaders({'No-Auth':'True'});
+    return this.http.post(this.rootUrl + '/api/User/Register', body,{headers : reqHeader});
+    // return this.http
+    //   .post(this.rootUrl + 'api/User/Register', body , {headers : reqHeader})
+    //   .pipe(
+    //     catchError(this.handleError)
 
-    return this.http
-      .post(this.rootUrl + 'api/User/Register', body)
-      .pipe(
-        catchError(this.handleError)
-
-      );
+    //   );
 
 
 
@@ -47,40 +46,23 @@ export class UserService {
 
 // this function makes token request to the web api project
     userAuthentication(userName,password ) {
-             var data = "username=" + userName+ "&password="+password+ "&grant_type=password";
-                                             //json object
-             var reqHeader = new HttpHeaders({'Content-type': 'application/x-www-urlencoded'});
-             return this.http.post(this.rootUrl+ '/token', data, {headers : reqHeader});
+      var data = "username=" + userName + "&password=" + password + "&grant_type=password";
+      var reqHeader = new HttpHeaders({ 'Content-Type': 'application/x-www-urlencoded','No-Auth':'True' });
+      return this.http.post(this.rootUrl + '/token', data, { headers: reqHeader });
 
     }
-
-
+   
+// ToDO: (with Interceptors) 1)Append this Bearer access token to evrry webapi method which need Authorization
+//       2) beacause the TOken expires after x minuete we have to redirect the user to the login      
     getUserClaims() {
-       return this.http.get(this.rootUrl + '/api/GetUserClaims'
-       ,{headers : new HttpHeaders({'Authorization':'Bearer '+localStorage.getItem('userToken')})});
-
-       //passing the Json Object with authorization
-       
+      return  this.http.get(this.rootUrl+'/api/GetUserClaims');
     }
 
 
-  private handleError(error: HttpErrorResponse) {
-    if (error.error instanceof ErrorEvent) {
-      // A client-side or network error occurred. Handle it accordingly.
-      console.error('An error occurred:', error.error.message);
-    } else {
-      // The backend returned an unsuccessful response code.
-      // The response body may contain clues as to what went wrong,
-      console.error(
-        `Backend returned code ${error.status}, ` +
-        `body was: ${error.error}`);
-    }
-    // return an observable with a user-facing error message
-    return throwError(
-      'Something bad happened; please try again later.');
-  };
+  
 
 
 
 
 }
+

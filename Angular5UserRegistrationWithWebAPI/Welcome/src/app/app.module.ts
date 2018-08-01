@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { ToastrModule } from 'ngx-toastr';
-import { HttpClientModule } from '../../node_modules/@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '../../node_modules/@angular/common/http';
 import { UserService } from './shared/user.service';
 import { UserComponent } from './user/user.component';
 
@@ -16,6 +16,7 @@ import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { appRoutes } from './routes';
 import { ProjectsListComponent } from './projects-list/projects-list.component';
 import { AuthGuard } from './auth/auth.guard';
+import { AuthInterceptor } from './auth/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,13 @@ import { AuthGuard } from './auth/auth.guard';
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [UserService,AuthGuard],
+  providers: [UserService,AuthGuard,
+    ,{
+
+      provide:HTTP_INTERCEPTORS,
+      useClass : AuthInterceptor,
+      multi : true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

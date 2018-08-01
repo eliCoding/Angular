@@ -51,12 +51,12 @@ namespace WebAPI.Controllers
     
 
         public AccountModel GetUserClaims()
-        {
+       {
 
-            
+
+
             var identityClaims = (ClaimsIdentity)User.Identity;
             IEnumerable<Claim> claims = identityClaims.Claims;
-
             AccountModel model = new AccountModel()
             {
                 UserName = identityClaims.FindFirst("Username").Value,
@@ -64,10 +64,7 @@ namespace WebAPI.Controllers
                 FirstName = identityClaims.FindFirst("FirstName").Value,
                 LastName = identityClaims.FindFirst("LastName").Value,
                 LoggedOn = identityClaims.FindFirst("LoggedOn").Value
-
-
             };
-
             return model;
 
 
