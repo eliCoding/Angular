@@ -48,7 +48,7 @@ namespace WebAPI.Controllers
         //this api method returns the claims of current user
         [HttpGet]
         [Route("api/GetUserClaims")]
-        [Authorize]
+    
 
         public AccountModel GetUserClaims()
         {

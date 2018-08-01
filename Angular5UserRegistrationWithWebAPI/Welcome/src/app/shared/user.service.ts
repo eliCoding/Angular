@@ -47,15 +47,21 @@ export class UserService {
 
 // this function makes token request to the web api project
     userAuthentication(userName,password ) {
-             var data = "username=" + userName+ "&password="+password+ "$grant_type=password";
-             var data = "username=" + userName + "&password=" + password + "&grant_type=password";
-
+             var data = "username=" + userName+ "&password="+password+ "&grant_type=password";
                                              //json object
              var reqHeader = new HttpHeaders({'Content-type': 'application/x-www-urlencoded'});
              return this.http.post(this.rootUrl+ '/token', data, {headers : reqHeader});
 
     }
 
+
+    getUserClaims() {
+       return this.http.get(this.rootUrl + '/api/GetUserClaims'
+       ,{headers : new HttpHeaders({'Authorization':'Bearer '+localStorage.getItem('userToken')})});
+
+       //passing the Json Object with authorization
+       
+    }
 
 
   private handleError(error: HttpErrorResponse) {

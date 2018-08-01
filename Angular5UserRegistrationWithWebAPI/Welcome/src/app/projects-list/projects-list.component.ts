@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from '../shared/user.service';
+
 
 @Component({
   selector: 'app-projects-list',
@@ -7,10 +9,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./projects-list.component.css']
 })
 export class ProjectsListComponent implements OnInit {
-
-  constructor(private router : Router) { }
+     userClaims : any;
+  constructor(private router : Router , private userService : UserService) { }
 
   ngOnInit() {
+    this.userService.getUserClaims().subscribe((data: any) => {
+      this.userClaims = data;
+    });
   }
 
   Logout() {
