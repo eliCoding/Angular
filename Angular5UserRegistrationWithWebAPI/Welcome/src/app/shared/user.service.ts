@@ -60,7 +60,11 @@ export class UserService {
 
 
   
+   getAllRoles() {
+         var reqHeader = new HttpHeaders({'No-Auth':'True'});
+         return this.http.get(this.rootUrl + '/api/GetAllRoles',{headers : reqHeader});
 
+   }
 
 
 

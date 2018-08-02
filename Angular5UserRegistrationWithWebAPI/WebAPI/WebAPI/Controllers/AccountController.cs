@@ -36,7 +36,7 @@ namespace WebAPI.Controllers
 
             //to create the user with the given details (password)
             IdentityResult result = manager.Create(user, model.Password);
-
+            manager.AddToRoles(user.Id, model.Roles);
 
             return result;
 

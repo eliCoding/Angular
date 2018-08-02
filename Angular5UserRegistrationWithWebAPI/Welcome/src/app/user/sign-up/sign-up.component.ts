@@ -13,18 +13,29 @@ import { UserService } from '../../shared/user.service';
 })
 export class SignUpComponent implements OnInit {
 
-  emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
+ 
   user:User;
+  emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
+  roles : any[];
 
   // inject the Userservice class into the signup Component constructor
   constructor(private userService: UserService , private toastr : ToastrService) { }
 
   ngOnInit() {
 
-   //call the reset fomrm inInit
+   //call the reset form inInit
    this.resetForm();
+   this.userService.getAllRoles().subscribe(
+     (data : any) =>  {
+          data.forEach(obj => obj.selected = false);
+          this.roles = data;
+          }
+        
+        );
+ 
 
   }
+  
 
 
     
