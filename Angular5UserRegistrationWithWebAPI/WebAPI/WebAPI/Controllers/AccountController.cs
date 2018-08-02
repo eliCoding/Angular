@@ -68,5 +68,26 @@ namespace WebAPI.Controllers
 
 
         }
+
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        [Route("api/ForAdminRole")]
+        public string ForAdminROle()
+        {
+            return "for admin role";
+        }
+
+
+        [HttpGet]
+        [Authorize(Roles = "Developer")]
+        [Route("api/ForDeveloperRole")]
+
+        public string ForDeveloperRole()
+        {
+            return "for developer role";
+        }
+
+
+
     }
 }
