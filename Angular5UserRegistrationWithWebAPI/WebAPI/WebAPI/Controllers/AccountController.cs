@@ -36,6 +36,8 @@ namespace WebAPI.Controllers
 
             //to create the user with the given details (password)
             IdentityResult result = manager.Create(user, model.Password);
+
+            // add new user in the UserRole table
             manager.AddToRoles(user.Id, model.Roles);
 
             return result;
@@ -52,9 +54,6 @@ namespace WebAPI.Controllers
 
         public AccountModel GetUserClaims()
        {
-
-
-
             var identityClaims = (ClaimsIdentity)User.Identity;
             IEnumerable<Claim> claims = identityClaims.Claims;
             AccountModel model = new AccountModel()

@@ -9,7 +9,7 @@ import { UserService } from '../shared/user.service';
   styleUrls: ['./projects-list.component.css']
 })
 export class ProjectsListComponent implements OnInit {
-  userClaims: any;
+   userClaims: any;
 
   constructor(private router: Router, private userService: UserService) { }
 
@@ -24,7 +24,6 @@ export class ProjectsListComponent implements OnInit {
     localStorage.removeItem('userToken');
     this.router.navigate(['/login']);
   }
-
 
 
 }

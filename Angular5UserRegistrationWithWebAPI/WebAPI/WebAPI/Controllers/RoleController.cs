@@ -20,7 +20,7 @@ namespace WebAPI.Controllers
         {
             var roleStore = new RoleStore<IdentityRole>(new ApplicationDbContext());
             var roleMngr = new RoleManager<IdentityRole>(roleStore);
-
+            // show the user registration form as a check box
             var roles = roleMngr.Roles
                 .Select(x => new { x.Id, x.Name })
                 .ToList();

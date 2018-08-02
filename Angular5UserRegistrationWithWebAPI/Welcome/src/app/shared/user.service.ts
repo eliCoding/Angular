@@ -19,27 +19,21 @@ export class UserService {
   constructor(private http: HttpClient ) { }
 
   // add the body part which is that is from the Form for each properties
-  registerUser(user: User) {
+  registerUser(user: User , roles : string[]) {
     //body of the request
 
-    const body: User = {
+    const body = {
       UserName: user.UserName,
       Password: user.Password,
       Email: user.Email,
       FirstName: user.FirstName,
-      LastName: user.LastName
-
+      LastName: user.LastName,
+      Roles :roles
 
     }
     var reqHeader = new HttpHeaders({'No-Auth':'True'});
     return this.http.post(this.rootUrl + '/api/User/Register', body,{headers : reqHeader});
-    // return this.http
-    //   .post(this.rootUrl + 'api/User/Register', body , {headers : reqHeader})
-    //   .pipe(
-    //     catchError(this.handleError)
-
-    //   );
-
+  
 
 
   }
