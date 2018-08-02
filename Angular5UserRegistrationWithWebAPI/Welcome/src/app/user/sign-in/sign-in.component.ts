@@ -22,6 +22,10 @@ export class SignInComponent implements OnInit {
           .subscribe ((data : any) => {
            // store the access token in the client web browser 
             localStorage.setItem('userToken',data.acces_token);
+            
+            // save roles array inside the local storage
+            localStorage.setItem('userRoles',data.role);
+
             // navigate the user to the new component if the log in is successfull 
             this.router.navigate(['/projectslist'])
           },

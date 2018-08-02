@@ -17,6 +17,7 @@ import { appRoutes } from './routes';
 import { ProjectsListComponent } from './projects-list/projects-list.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     UserComponent,
     SignInComponent,
     HomeComponent,
-    ProjectsListComponent
+    ProjectsListComponent,
+    AdminPanelComponent
    
   ],
   imports: [
