@@ -18,7 +18,18 @@ export class ProjectsListComponent implements OnInit {
       this.userClaims = data;
 
     });
+
+ // Operation based on the role
+ if(this.userService.roleMatch(['Admin']))
+ {
+         //ToDo: 
+      
+ }
+
   }
+
+   
+
 
   Logout() {
     localStorage.removeItem('userToken');
