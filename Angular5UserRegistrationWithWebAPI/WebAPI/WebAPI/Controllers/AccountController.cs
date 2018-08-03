@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Security.Claims;
 using System.Web.Http;
 using WebAPI.Models;
@@ -42,16 +46,12 @@ namespace WebAPI.Controllers
 
             return result;
 
-
-
         }
 
 
         //this api method returns the claims of current user
         [HttpGet]
         [Route("api/GetUserClaims")]
-    
-
         public AccountModel GetUserClaims()
        {
             var identityClaims = (ClaimsIdentity)User.Identity;

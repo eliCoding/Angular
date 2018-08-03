@@ -21,7 +21,7 @@ export class SignInComponent implements OnInit {
           this.userService.userAuthentication(userName,password)
           .subscribe ((data : any) => {
            // store the access token in the client web browser 
-            localStorage.setItem('userToken',data.acces_token);
+            localStorage.setItem('userToken',data.access_token);
             
             // save roles array inside the local storage
             localStorage.setItem('userRoles',data.role);

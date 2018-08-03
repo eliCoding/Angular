@@ -22,7 +22,7 @@ namespace WebAPI
             );
 
             // alternative of [Authorize] annotation 
-            //config.Filters.Add(new AuthorizeAttribute());
+            config.Filters.Add(new AuthorizeAttribute());
         }
     }
 }
