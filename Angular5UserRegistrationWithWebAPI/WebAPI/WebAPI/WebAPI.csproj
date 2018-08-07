@@ -245,9 +245,26 @@
     <Compile Include="Migrations\201807280027212_ChangedDefaultCulomnNames.Designer.cs">
       <DependentUpon>201807280027212_ChangedDefaultCulomnNames.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808072004457_ProjectTable.cs" />
+    <Compile Include="Migrations\201808072004457_ProjectTable.Designer.cs">
+      <DependentUpon>201808072004457_ProjectTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808072006018_ProjectTable1.cs" />
+    <Compile Include="Migrations\201808072006018_ProjectTable1.Designer.cs">
+      <DependentUpon>201808072006018_ProjectTable1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808072013054_ProjectTableForeginKey.cs" />
+    <Compile Include="Migrations\201808072013054_ProjectTableForeginKey.Designer.cs">
+      <DependentUpon>201808072013054_ProjectTableForeginKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808072014330_ProjectTableForeginKeyupdate.cs" />
+    <Compile Include="Migrations\201808072014330_ProjectTableForeginKeyupdate.Designer.cs">
+      <DependentUpon>201808072014330_ProjectTableForeginKeyupdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -346,6 +363,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807280027212_ChangedDefaultCulomnNames.resx">
       <DependentUpon>201807280027212_ChangedDefaultCulomnNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808072004457_ProjectTable.resx">
+      <DependentUpon>201808072004457_ProjectTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808072006018_ProjectTable1.resx">
+      <DependentUpon>201808072006018_ProjectTable1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808072013054_ProjectTableForeginKey.resx">
+      <DependentUpon>201808072013054_ProjectTableForeginKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808072014330_ProjectTableForeginKeyupdate.resx">
+      <DependentUpon>201808072014330_ProjectTableForeginKeyupdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

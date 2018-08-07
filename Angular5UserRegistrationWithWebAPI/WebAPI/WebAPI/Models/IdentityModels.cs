@@ -20,7 +20,11 @@ namespace WebAPI.Models
 
     public class ApplicationDbContext : IdentityDbContext <ApplicationUser>
     {
-      public ApplicationDbContext() 
+
+
+        public DbSet<Project> Projects { get; set; }
+
+        public ApplicationDbContext() 
             :  base ("DefaultConnection", throwIfV1Schema : false)
         {
 
@@ -46,6 +50,9 @@ namespace WebAPI.Models
             //AspNetUserLogins -> UserLogin
             modelBuilder.Entity<IdentityUserLogin>()
                 .ToTable("UserLogin");
+
+          
+
         }
 
 
