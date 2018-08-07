@@ -3,7 +3,9 @@
       <a href="#" class="brand-logo center">
         <i class="material-icons">cloud</i>Presale</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-
+    <li *ngIf="userClaims">
+      <a>Welcome {{userClaims.FirstName}} {{userClaims.LastName}}</a>
+    </li>
           <li    *ngIf="userService.roleMatch(['Admin'])">
               <a routerLink="/adminPanel">Admin Panel</a>
             </li>
@@ -13,9 +15,26 @@
       </ul>
     </div>
   </nav>
-   porject List
 
-   <div class="row" *ngIf="userClaims">
+
+
+  <div class="row" *ngIf="userClaims">
+    <div class="col s12 m6">
+      <div class="card">
+        <div class="card-image">
+          <img src="/assets/image/projectPic.jpg">
+      
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+        </div>
+        <div class="card-content">
+            <span class="card-title">Crest</span>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+         
+   <!-- <div class="row" *ngIf="userClaims">
     <div class="col s12 m7">
       <div class="card">
         <div class="card-content">
@@ -29,4 +48,4 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->

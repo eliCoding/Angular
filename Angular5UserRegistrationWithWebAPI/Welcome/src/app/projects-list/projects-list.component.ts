@@ -18,7 +18,7 @@ export class ProjectsListComponent implements OnInit {
     this.userService.getUserClaims().subscribe((data: any) => {
     
       this.userClaims = data;
-      console.log("I am here");
+    
     });
 
  // Operation based on the role
