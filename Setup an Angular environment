@@ -12,4 +12,5 @@ https://angular.io/guide/quickstart
 9) to setup bootstrap css and js with CLI ----> a)npm install --save @ng-bootstrap/ng-bootstrap
                                                 b)import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
                                    @ngModule    c) imports: [NgbModule.forRoot()]
+                           in angular.json file  d) Styles-->   "./node_modules/bootstrap/dist/css/bootstrap.min.css"
 
