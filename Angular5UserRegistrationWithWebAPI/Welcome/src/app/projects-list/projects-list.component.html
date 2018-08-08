@@ -46,3 +46,14 @@
       </div>
     </div>
   </div> -->
+
+
+  <div class="row">
+       <ul id="thumbnailsList">
+          <li *ngFor="let image of visibleImages">
+         <img src="{{image.url}}"  class="thumbnailsList" width="200" height="160"/>
+
+
+          </li>
+       </ul>
+  </div>
