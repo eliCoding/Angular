@@ -20,6 +20,7 @@ import { AuthInterceptor } from './auth/auth.interceptor';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import {NgbModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {NgbModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
     HomeComponent,
     ProjectsListComponent,
     AdminPanelComponent,
-    ForbiddenComponent
+    ForbiddenComponent,
+    NavbarComponent
    
   ],
   imports: [

@@ -1,31 +1,13 @@
-<!--Navbar-->
 
-<nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo center">
-        <i class="material-icons">cloud</i>Presale</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-    <li *ngIf="userClaims">
-      <a>Welcome {{userClaims.FirstName}} {{userClaims.LastName}}</a>
-    </li>
-          <li    *ngIf="userService.roleMatch(['Admin'])">
-              <a routerLink="/adminPanel">Admin Panel</a>
-            </li>
-        <li>
-          <a (click)="Logout()">Logout</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-<!--Navbar-->
-
+<app-navbar></app-navbar>
 
 <!--Project List -->
 <p>
-  <ngb-alert [dismissible]="false">
+  <ngb-alert type="success" [dismissible]="false">
     <strong>Warning!</strong> Better check yourself, you're not looking too good.
   </ngb-alert>
 </p>
+
 <div class="row">
    <h4 class="col s12 m6">Projects list</h4>
   </div>
