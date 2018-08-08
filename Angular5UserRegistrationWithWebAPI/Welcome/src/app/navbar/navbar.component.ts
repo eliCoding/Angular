@@ -9,12 +9,16 @@ import { UserService } from '../shared/user.service';
 export class NavbarComponent implements OnInit {
 
   constructor(private userService: UserService) { }
-  userClaims:any;
-  ngOnInit() {
 
+     userClaims:any;
+
+  ngOnInit() {
+  
     this.userService.getUserClaims().subscribe((data: any) => {
     
       this.userClaims = data;
-  }
+    
+    });
 
+  }
 }

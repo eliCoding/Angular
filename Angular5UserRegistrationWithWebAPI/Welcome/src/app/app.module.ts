@@ -21,6 +21,8 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import {NgbModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ProjectsImagesComponent } from './projects-images/projects-images.component';
+import { ImageService } from './shared/image.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     ProjectsListComponent,
     AdminPanelComponent,
     ForbiddenComponent,
-    NavbarComponent
+    NavbarComponent,
+    ProjectsImagesComponent
    
   ],
   imports: [
@@ -52,7 +55,7 @@ import { NavbarComponent } from './navbar/navbar.component';
       provide:HTTP_INTERCEPTORS,
       useClass : AuthInterceptor,
       multi : true
-    }],
+    },ImageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
