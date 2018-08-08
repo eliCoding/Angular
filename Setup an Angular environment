@@ -9,5 +9,8 @@ https://angular.io/guide/quickstart
 6)To add a service ---> ng generate service x
 7)if devit package is not recognized ---->npm install --save-dev @angular-devkit/build-angular
 8) to generate the Angulat guard for route guards --> ng g g auth
-9) to setup bootstrap css and js with CLI ---->npm install bootstrap ngx-bootstrap --save
+9) to setup bootstrap css and js with CLI ----> a)npm install --save @ng-bootstrap/ng-bootstrap
+                                                b)import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+                                   @ngModule    c) imports: [NgbModule.forRoot()]
+                           in angular.json file  d) Styles-->   "./node_modules/bootstrap/dist/css/bootstrap.min.css"
 
