@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../shared/user.service';
+import { Router } from '../../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +9,7 @@ import { UserService } from '../shared/user.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private userService: UserService) { }
+  constructor(private router: Router,private userService: UserService) { }
 
      userClaims:any;
 
@@ -20,5 +21,11 @@ export class NavbarComponent implements OnInit {
     
     });
 
+  }
+
+  
+  Logout() {
+    localStorage.removeItem('userToken');
+    this.router.navigate(['/login']);
   }
 }
