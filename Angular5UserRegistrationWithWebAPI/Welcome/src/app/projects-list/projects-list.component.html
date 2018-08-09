@@ -46,12 +46,17 @@
       </div>
     </div>
   </div> -->
-
+    <h1>Project List</h1>
 
   <div class="row">
-       <ul id="thumbnailsList">
+    
+    <button class="btn  btn-info btn-lg" [class.active]="filterBy==='all'" (click)="filterBy='all'">All</button>
+    <button class="btn btn-lg btn-info" [class.active]="filterBy==='available'" (click)="filterBy='available'">Available</button>
+    <button class="btn btn-lg btn-info" [class.active]="filterBy==='soldout'" (click)="filterBy='soldout'">Sold Out</button>
+    
+    <ul id="thumbnailsList">
           <li *ngFor="let image of visibleImages">
-         <img src="{{image.url}}"  class="thumbnailsList" width="200" height="160"/>
+         <img src="{{image.url}}"  class="tn" width="200" height="160"/>
 
 
           </li>
