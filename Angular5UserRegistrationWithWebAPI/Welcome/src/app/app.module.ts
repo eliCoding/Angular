@@ -23,6 +23,8 @@ import {NgbModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProjectsImagesComponent } from './projects-images/projects-images.component';
 import { ImageService } from './shared/image.service';
+import { ImageFilterPipe } from './shared/filter.pipe';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { ImageService } from './shared/image.service';
     AdminPanelComponent,
     ForbiddenComponent,
     NavbarComponent,
-    ProjectsImagesComponent
+    ProjectsImagesComponent,
+    ImageFilterPipe
    
   ],
   imports: [
@@ -55,7 +58,7 @@ import { ImageService } from './shared/image.service';
       provide:HTTP_INTERCEPTORS,
       useClass : AuthInterceptor,
       multi : true
-    },ImageService],
+    },ImageService,ImageFilterPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

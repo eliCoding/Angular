@@ -29,13 +29,13 @@ const IMAGES = [
     { "id": 4, "category": "Available", "caption": "xyz", "url": "/assets/image/p4.jpg" },
     { "id": 5, "category": "Available", "caption": "xyz", "url": "/assets/image/p5.jpg" },
     { "id": 6, "category": "Available", "caption": "xyz", "url": "/assets/image/p6.jpg" },
-    { "id": 7, "category": "Available", "caption": "xyz", "url": "/assets/image/p1.jpg" },
-    { "id": 8, "category": "Available", "caption": "xyz", "url": "/assets/image/p2.jpg" },
-    { "id": 9, "category": "Sold", "caption": "xyz", "url": "/assets/image/p3.jpg" },
-    { "id": 10, "category": "Available", "caption": "xyz", "url": "/assets/image/p4.jpg" },
-    { "id": 11, "category": "Available", "caption": "xyz", "url": "/assets/image/p5.jpg" },
-    { "id": 12, "category": "Sold", "caption": "xyz", "url": "/assets/image/p6.jpg" },
-    { "id": 13, "category": "Available", "caption": "xyz", "url": "/assets/image/p2.jpg" },
-    { "id": 14, "category": "Available", "caption": "xyz", "url": "/assets/image/p3.jpg" },
-    { "id": 15, "category": "Available", "caption": "xyz", "url": "/assets/image/p1.jpg" }
+    { "id": 7, "category": "Available", "caption": "xyz", "url": "/assets/image/p7.jpg" },
+    { "id": 8, "category": "Available", "caption": "xyz", "url": "/assets/image/p8.jpg" },
+    { "id": 9, "category": "Sold", "caption": "xyz", "url": "/assets/image/p9.jpg" },
+    { "id": 10, "category": "Available", "caption": "xyz", "url": "/assets/image/p10.jpg" },
+    { "id": 11, "category": "Available", "caption": "xyz", "url": "/assets/image/p11.jpg" },
+    { "id": 12, "category": "Sold", "caption": "xyz", "url": "/assets/image/p12.jpg" },
+    { "id": 13, "category": "Available", "caption": "xyz", "url": "/assets/image/p13.jpeg" },
+    { "id": 14, "category": "Available", "caption": "xyz", "url": "/assets/image/p14.jpg" },
+    { "id": 15, "category": "Available", "caption": "xyz", "url": "/assets/image/p15.jpg" }
 ]
