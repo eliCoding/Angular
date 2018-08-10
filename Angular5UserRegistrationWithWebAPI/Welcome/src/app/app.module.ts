@@ -25,6 +25,7 @@ import { ProjectsImagesComponent } from './projects-images/projects-images.compo
 import { ImageService } from './shared/image.service';
 import { ImageFilterPipe } from './shared/filter.pipe';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { MiniCalendarComponent } from 'mini-calendar';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     ForbiddenComponent,
     NavbarComponent,
     ProjectsImagesComponent,
-    ImageFilterPipe
+    ImageFilterPipe,
+    MiniCalendarComponent
    
   ],
   imports: [
