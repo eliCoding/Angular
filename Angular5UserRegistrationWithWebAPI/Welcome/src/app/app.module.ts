@@ -24,6 +24,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ProjectsImagesComponent } from './projects-images/projects-images.component';
 import { ImageService } from './shared/image.service';
 import { ImageFilterPipe } from './shared/filter.pipe';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { ImageFilterPipe } from './shared/filter.pipe';
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
     NgbModule.forRoot(),
-    NgbAlertModule
+    NgbAlertModule,
+    AngularFontAwesomeModule
     
   ],
   providers: [UserService,AuthGuard,

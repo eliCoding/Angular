@@ -29,7 +29,7 @@
     <ul>
       <li *ngFor="let item of roles;let i = index">
                         <!--Non repeating id for each check box-->
-        <input type="checkbox" [id]="'roles-'+i" value="{{item.Id}}" [checked]="item.selected"   (change) = "updateSelectedRoles(i)"   >
+          <input type="checkbox" [id]="'roles-'+i" value="{{item.Id}}" [checked]="item.selected"   (change) = "updateSelectedRoles(i)"   >
         <label [for]="'roles-'+i">{{item.Name}}</label>
       </li>
     </ul>
@@ -41,7 +41,4 @@
       <button [disabled]="!userRegistrationForm.valid" class="btn-large btn-submit" type="submit">Submit</button>
     </div>
   </div>
-</form>
-
-
-
+</form> 
