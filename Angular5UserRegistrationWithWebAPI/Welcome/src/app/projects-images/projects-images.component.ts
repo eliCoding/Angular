@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageService } from '../shared/image.service';
 import {ActivatedRoute} from '@angular/router'
+import { FloorPlanService } from '../shared/floorPlan';
 
 @Component({
   selector: 'app-projects-images',
@@ -11,9 +12,11 @@ export class ProjectsImagesComponent implements OnInit {
 
     image:any
  
+    visibleFloorPlan: any[] =[];
+  constructor(private imageService: ImageService, private route : ActivatedRoute, private floorPlanService:FloorPlanService) { 
 
-
-  constructor(private imageService: ImageService, private route : ActivatedRoute) { }
+     this.visibleFloorPlan = this.floorPlanService.getFloorPlans();
+  }
 
   ngOnInit() {
 

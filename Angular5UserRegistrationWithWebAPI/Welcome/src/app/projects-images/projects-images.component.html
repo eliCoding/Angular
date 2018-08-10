@@ -23,13 +23,13 @@
         </div>
         <div class="col-sm-4">
           <h2 class="mt-4">Calender</h2>
-          <mini-calendar></mini-calendar>
+     
         </div>
       </div>
       <!-- /.row -->
   <div class="row">
 
-    <div class="col-sm-5 my-5">
+    <!-- <div class="col-sm-5 my-5">
       <div class="card">
           <h2 class="mt-4">Floor Plans</h2>
         <img class="card-img-top" src="http://placehold.it/300x200" alt="">
@@ -41,7 +41,16 @@
           <a href="#" class="btn btn-primary">Find Out More!</a>
         </div>
       </div>
-    </div>
+    </div> -->
+    <h2 class="mt-4">Floor Plans</h2>
+    <ul id="thumbnailsList">
+        <li *ngFor="let floorPlan of visibleFloorPlan">
+          <!-- <a [routerLink] = "['/image', image.id]"> -->
+       <img src="{{floorPlan.url}}"  class="tn" width="200" height="160"/>
+        <!-- </a> -->
+
+        </li>
+     </ul>
 
   </div>
 

@@ -25,7 +25,10 @@ import { ProjectsImagesComponent } from './projects-images/projects-images.compo
 import { ImageService } from './shared/image.service';
 import { ImageFilterPipe } from './shared/filter.pipe';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { MiniCalendarComponent } from 'mini-calendar';
+import { FloorPlanComponent } from './floor-plan/floor-plan.component';
+import { FloorPlanService } from './shared/floorPlan';
+
+
 
 
 @NgModule({
@@ -41,7 +44,9 @@ import { MiniCalendarComponent } from 'mini-calendar';
     NavbarComponent,
     ProjectsImagesComponent,
     ImageFilterPipe,
-    MiniCalendarComponent
+    FloorPlanComponent,
+ 
+    
    
   ],
   imports: [
@@ -62,7 +67,7 @@ import { MiniCalendarComponent } from 'mini-calendar';
       provide:HTTP_INTERCEPTORS,
       useClass : AuthInterceptor,
       multi : true
-    },ImageService,ImageFilterPipe],
+    },ImageService,ImageFilterPipe, FloorPlanService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
