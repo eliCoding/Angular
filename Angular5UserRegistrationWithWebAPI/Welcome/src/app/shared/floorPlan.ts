@@ -23,12 +23,19 @@ export class FloorPlanService {
 
 // TOdo : for now static image has to retrieve from Databae
 const FloorPlan = [
-    { "id": 1,"url": "/assets/image/floorPlan/ProjectA/fp1.png" },
-    { "id": 2,"url": "/assets/image/floorPlan/ProjectA/fp2.png" },
-    { "id": 3,"url": "/assets/image/floorPlan/ProjectA/fp3.png" },
-    { "id": 4,"url": "/assets/image/floorPlan/ProjectA/fp4.png" },
-    { "id": 5,"url":"/assets/image/floorPlan/ProjectA/fp5.png" },
-    { "id": 6,"url": "/assets/image/floorPlan/ProjectA/fp6.png"}
+    { "id": 1,"category": "ProjectA","url": "/assets/image/floorPlan/ProjectA/fp1.png" },
+    { "id": 2,"category": "ProjectA","url": "/assets/image/floorPlan/ProjectA/fp2.png" },
+    { "id": 3,"category": "ProjectA","url": "/assets/image/floorPlan/ProjectA/fp3.png" },
+    { "id": 4,"category": "ProjectA","url": "/assets/image/floorPlan/ProjectA/fp4.png" },
+    { "id": 5,"category": "ProjectA","url":"/assets/image/floorPlan/ProjectA/fp5.png" },
+    { "id": 6,"category": "ProjectA","url": "/assets/image/floorPlan/ProjectA/fp6.png"},
+    { "id": 7,"category": "ProjectB","url": "/assets/image/floorPlan/ProjectB/fp1.png" },
+    { "id": 8,"category": "ProjectB","url": "/assets/image/floorPlan/ProjectB/fp2.png" },
+    { "id": 9,"category": "ProjectB","url": "/assets/image/floorPlan/ProjectB/fp3.png" },
+    { "id": 10,"category": "ProjectB","url": "/assets/image/floorPlan/ProjectB/fp4.png" },
+    { "id": 11,"category": "ProjectB","url":"/assets/image/floorPlan/ProjectB/fp5.png" },
+    { "id": 12,"category": "ProjectB","url": "/assets/image/floorPlan/ProjectB/fp6.png"}
+
 
 
 ]

@@ -41,10 +41,3 @@ const IMAGES = [
 ]
 
 
-const FLOORPLAN = [
-       {}
-
-
-
-
-]
