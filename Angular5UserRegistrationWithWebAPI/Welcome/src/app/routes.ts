@@ -7,6 +7,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { ProjectsImagesComponent } from './projects-images/projects-images.component';
+import { FloorPlanComponent } from './floor-plan/floor-plan.component';
 
 
 export const appRoutes: Routes = [
@@ -24,6 +25,6 @@ export const appRoutes: Routes = [
     },
    {   path : '', redirectTo:'login', pathMatch: 'full'},
    { path: 'image/:id', component: ProjectsImagesComponent, canActivate:[AuthGuard] },
-
+   { path: 'floorPlan/:id', component: FloorPlanComponent, canActivate:[AuthGuard] }
 
 ];

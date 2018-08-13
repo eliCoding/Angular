@@ -47,9 +47,9 @@
     <h2 class="mt-4">Floor Plans</h2>
     <ul id="thumbnailsList">
         <li *ngFor="let floorPlan of visibleFloorPlan">
-          <!-- <a [routerLink] = "['/image', image.id]"> -->
+          <a [routerLink] = "['/floorPlan', floorPlan.id]">
        <img src="{{floorPlan.url}}"  class="tn" width="200" height="160"/>
-        <!-- </a> -->
+        </a>
 
         </li>
      </ul>

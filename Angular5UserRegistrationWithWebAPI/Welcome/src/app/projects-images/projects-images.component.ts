@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,OnChanges } from '@angular/core';
 import { ImageService } from '../shared/image.service';
 import {ActivatedRoute} from '@angular/router'
 import { FloorPlanService } from '../shared/floorPlan';
@@ -8,7 +8,7 @@ import { FloorPlanService } from '../shared/floorPlan';
   templateUrl: './projects-images.component.html',
   styleUrls: ['./projects-images.component.css']
 })
-export class ProjectsImagesComponent implements OnInit {
+export class ProjectsImagesComponent implements OnInit,OnChanges{
 
     image:any
  
@@ -18,12 +18,20 @@ export class ProjectsImagesComponent implements OnInit {
      this.visibleFloorPlan = this.floorPlanService.getFloorPlans();
   }
 
+
+  ngOnChanges() {
+    this.visibleFloorPlan = this.floorPlanService.getFloorPlans();
+  }
+  
+
   ngOnInit() {
 
         this.image =this.imageService.getImage(
 
          +this.route.snapshot.params['id']
         )
+
+
 
   }
 

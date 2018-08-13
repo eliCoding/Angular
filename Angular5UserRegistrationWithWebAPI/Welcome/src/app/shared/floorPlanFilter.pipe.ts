@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core'
 
 
 @Pipe({ 
-  name: 'imageFilter' 
+  name: 'floorPlanFilter' 
 })
 export class ImageFilterPipe implements PipeTransform {
     transform(items: any[], criteria: string): any {
