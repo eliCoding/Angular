@@ -9,18 +9,18 @@ import { ImageService } from '../shared/image.service';
   templateUrl: './projects-list.component.html',
   styleUrls: ['./projects-list.component.css']
 })
-export class ProjectsListComponent implements OnInit, OnChanges {
+export class ProjectsListComponent implements OnInit {
   userClaims: any;
 
   @Input() filterBy?: string = 'all';
   visibleImages: any[] = [];
   constructor(private router: Router, private userService: UserService, private imageService: ImageService) {
-    this.visibleImages = this.imageService.getImages();
+    
   }
 
-  ngOnChanges() {
-    this.visibleImages = this.imageService.getImages();
-  }
+  // ngOnChanges() {
+  //   this.visibleImages = this.imageService.getImages();
+  // }
 
   ngOnInit() {
 
@@ -35,12 +35,14 @@ export class ProjectsListComponent implements OnInit, OnChanges {
     // Operation based on the role
     if (this.userService.roleMatch(['Admin'])) {
       //ToDo: 
+      //Show Developers List
+
 
     }
 
     if (this.userService.roleMatch(['Developer'])) {
       //ToDo: 
-
+      this.visibleImages = this.imageService.getImages();
     }
 
   }

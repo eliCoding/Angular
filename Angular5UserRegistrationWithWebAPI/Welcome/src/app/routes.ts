@@ -13,16 +13,20 @@ import { FloorPlanComponent } from './floor-plan/floor-plan.component';
 export const appRoutes: Routes = [
     { path: 'projectslist', component: ProjectsListComponent, canActivate:[AuthGuard] },
     { path: 'forbidden', component: ForbiddenComponent, canActivate:[AuthGuard] },
+    { path: 'userslist', component: UserComponent, canActivate:[AuthGuard] },
     { path: 'adminPanel', component: AdminPanelComponent, canActivate:[AuthGuard] ,data : {roles:['Admin']}},
-    {
-        path: 'signup', component: UserComponent,
-        children: [{ path: '', component: SignUpComponent }]
-    },
+    // {
+    //     path: 'signup', component: UserComponent,
+    //     children: [{ path: '', component: SignUpComponent }]
+    // },
 
-    {
-        path: 'login', component: UserComponent,
-        children: [{ path: '', component: SignInComponent }]
-    },
+    // {
+    //     path: 'login', component: UserComponent,
+    //     children: [{ path: '', component: SignInComponent }]
+    // },
+    { path: 'signup', component: SignUpComponent, canActivate:[AuthGuard] },
+    { path: 'login', component: SignInComponent, canActivate:[AuthGuard] },
+
    {   path : '', redirectTo:'login', pathMatch: 'full'},
    { path: 'image/:id', component: ProjectsImagesComponent, canActivate:[AuthGuard] },
    { path: 'floorPlan/:id', component: FloorPlanComponent, canActivate:[AuthGuard] }

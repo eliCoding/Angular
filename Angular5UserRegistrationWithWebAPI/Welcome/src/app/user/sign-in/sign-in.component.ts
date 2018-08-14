@@ -27,7 +27,15 @@ export class SignInComponent implements OnInit {
             localStorage.setItem('userRoles',data.role);
 
             // navigate the user to the new component if the log in is successfull 
-            this.router.navigate(['/projectslist'])
+            if (this.userService.roleMatch(['Developer'])) {
+              this.router.navigate(['/projectslist'])
+
+            }
+            else {
+              this.router.navigate(['/userslist'])
+            }
+
+          
           },
           //handle 400 for wrong username and password
         (err : HttpErrorResponse) => {

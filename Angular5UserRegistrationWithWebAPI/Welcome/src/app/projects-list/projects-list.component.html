@@ -3,12 +3,12 @@
 
 
   <app-navbar></app-navbar>
-  <div class="container">
+  <div class="container" *ngIf="userService.roleMatch(['Developer'])">
     <h1 class="lead">Project List</h1>
 
-  <div class="row" *ngIf="userClaims">
+  <div class="row">
     
-    <button class="btn  btn-info btn-lg" [class.active]="filterBy==='all'" (click)="filterBy='all'">All</button>
+    <button  class="btn  btn-info btn-lg" [class.active]="filterBy==='all'" (click)="filterBy='all'">All</button>
     <button class="btn btn-lg btn-info" [class.active]="filterBy==='Available'" (click)="filterBy='Available'">Available</button>
     <button class="btn btn-lg btn-info" [class.active]="filterBy==='Sold'" (click)="filterBy='Sold'">Sold Out</button>
     
