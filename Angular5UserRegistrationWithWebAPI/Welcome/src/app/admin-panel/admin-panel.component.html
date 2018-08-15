@@ -1,1 +1,25 @@
 <app-navbar></app-navbar>
+
+<div class="container">
+
+    <h2 class="jumbotron">User List</h2>
+
+</div>
+
+<!-- <table class="table-sm table-hover">
+    <tr *ngFor="let user of userList">
+            <td>{{user.FirstName}} - {{user.LastName}}</td>
+
+    </tr>
+
+
+</table> -->
+<div class="row">
+    <ul>
+      <li *ngFor="let item of userList;let i = index">
+                        <!--Non repeating id for each check box-->
+          <input type="checkbox" [id]="'userList-'+i" value="{{item.Id}}" [checked]="item.selected"   (change) = "updateSelectedRoles(i)"   >
+        <label [for]="' userList-'+i">{{item.FirstName}}</label>
+      </li>
+    </ul>
+  </div>

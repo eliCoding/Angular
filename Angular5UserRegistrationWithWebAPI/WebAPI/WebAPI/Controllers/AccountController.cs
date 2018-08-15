@@ -2,19 +2,22 @@
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Security.Claims;
 using System.Web.Http;
+using System.Web.Http.Description;
 using WebAPI.Models;
 
 namespace WebAPI.Controllers
 {
     public class AccountController : ApiController
     {
-      
-     
+        private ApplicationDbContext _context;
+
         [HttpPost]
         [Route("api/User/Register")]
         [AllowAnonymous]
@@ -53,7 +56,7 @@ namespace WebAPI.Controllers
         [HttpGet]
         [Route("api/GetUserClaims")]
         public AccountModel GetUserClaims()
-       {
+        {
             var identityClaims = (ClaimsIdentity)User.Identity;
             IEnumerable<Claim> claims = identityClaims.Claims;
             AccountModel model = new AccountModel()
@@ -69,22 +72,120 @@ namespace WebAPI.Controllers
 
         }
 
-        [HttpGet]
-        [Authorize(Roles = "Admin")]
-        [Route("api/ForAdminRole")]
-        public string ForAdminROle()
+        //[HttpGet]
+        //[Authorize(Roles = "Admin")]
+        //[Route("api/ForAdminRole")]
+        //public string ForAdminROle()
+        //{
+        //    return "for admin role";
+        //}
+
+
+        //[HttpGet]
+        //[Authorize(Roles = "Developer")]
+        //[Route("api/ForDeveloperRole")]
+
+        //public string ForDeveloperRole()
+        //{
+        //    return "for developer role";
+        //}
+
+
+
+        //Get api/users
+        //all users
+
+        //[HttpGet]
+        //[Authorize(Roles = "Developer")]
+        //[Route("api/GetUsers")]
+        //public IQueryable<ApplicationUser> GetUsers()
+        //{
+
+        //    return _context.Users;
+        //}
+
+        //Get api/user/5
+        //users detail
+        [ResponseType(typeof(ApplicationUser))]
+
+        public IHttpActionResult GetUser(int id)
         {
-            return "for admin role";
+
+            ApplicationUser user = _context.Users.Find(id);
+
+            if(user == null) 
+                {
+                return NotFound();
+            }
+
+            return Ok(user);
         }
 
-
-        [HttpGet]
-        [Authorize(Roles = "Developer")]
-        [Route("api/ForDeveloperRole")]
-
-        public string ForDeveloperRole()
+        //Put api/users/5
+        public IHttpActionResult PutUser(string id, ApplicationUser user)
         {
-            return "for developer role";
+
+            _context.Entry(user).State = EntityState.Modified;
+
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!UserExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return StatusCode(HttpStatusCode.NoContent);
+        }
+
+        //// POST api/user
+        //[ResponseType(typeof(ApplicationUser))]
+        //public IHttpActionResult PostUser(ApplicationUser user)
+        //{
+
+        //    _context.Users.Add(user);
+        //    _context.SaveChanges();
+
+        //    return CreatedAtRoute("DefaultApi", new { id = user.Id }, user);
+        //}
+
+        // DELETE api/User/5
+        [ResponseType(typeof(ApplicationUser))]
+        public IHttpActionResult DeleteUser(int id)
+        {
+            ApplicationUser user = _context.Users.Find(id);
+            if (user== null)
+            {
+                return NotFound();
+            }
+
+            _context.Users.Remove(user);
+            _context.SaveChanges();
+
+            return Ok(user);
+        }
+
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing)
+        //    {
+        //        _context.Dispose();
+        //    }
+        //    base.Dispose(disposing);
+        //}
+
+
+        private bool UserExists(string id)
+        {
+            return _context.Users.Count(u => u.Id == id) > 0;
         }
 
 

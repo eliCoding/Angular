@@ -1,11 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { User } from './user.model';
-import { ToastrService } from 'ngx-toastr';
-import 'rxjs/add/operator/catch';
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
-import { element } from '../../../node_modules/@angular/core/src/render3/instructions';
+
+
 
 
 @Injectable()
@@ -14,10 +11,19 @@ export class UserService {
 
   //Create the base url from webapi
   readonly rootUrl = "http://localhost:55400"
-
+ 
 
   //inject the HttpClient into the copnstructor
   constructor(private http: HttpClient) { }
+
+// Get User List 
+
+getAllUsers() {
+  var reqHeader = new HttpHeaders({ 'No-Auth': 'True' });
+  return this.http.get(this.rootUrl + '/api/GetAllUsers', { headers: reqHeader });
+
+}
+
 
   // add the body part which is that is from the Form for each properties
   registerUser(user: User, roles: string[]) {
