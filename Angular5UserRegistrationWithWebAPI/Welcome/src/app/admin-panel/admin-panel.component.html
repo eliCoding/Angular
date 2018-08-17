@@ -2,9 +2,9 @@
 
 <div class="container">
 
-    <h2 class="jumbotron">User List</h2>
+  <h2>User List</h2>
 
-</div>
+
 
 <!-- <table class="table-sm table-hover">
     <tr *ngFor="let user of userList">
@@ -14,12 +14,30 @@
 
 
 </table> -->
-<div class="row">
-    <ul>
-      <li *ngFor="let item of userList;let i = index">
-                        <!--Non repeating id for each check box-->
-          <input type="checkbox" [id]="'userList-'+i" value="{{item.Id}}" [checked]="item.selected"   (change) = "updateSelectedRoles(i)"   >
-        <label [for]="' userList-'+i">{{item.FirstName}}</label>
-      </li>
-    </ul>
-  </div>
+<div class="table-responsive-md">
+  <table class="table ">
+    <thead class="table-danger">
+      <tr>
+     
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">User Name</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let item of userList;" class="table-secondary">
+      
+        <td>{{item.FirstName}}</td>
+        <td>{{item.LastName}}</td>
+        <td>{{item.Email}}</td>
+        <td>{{item.UserName}}</td>
+
+      </tr>
+
+
+    </tbody>
+  </table>
+</div>
+</div>
