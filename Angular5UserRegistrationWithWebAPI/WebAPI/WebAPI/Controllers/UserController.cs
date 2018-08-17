@@ -18,12 +18,7 @@ namespace WebAPI.Controllers
       
         public HttpResponseMessage GetUsers()
         {
-            //var roleStore = new RoleStore<IdentityRole>(new ApplicationDbContext());
-            //var roleMngr = new RoleManager<IdentityRole>(roleStore);
-            //// show the user registration form as a check box
-            //var roles = roleMngr.Roles
-            //    .Select(x => new { x.Id, x.Name })
-            //    .ToList();
+         
             var _context = new ApplicationDbContext();
             var allUsers = _context
                 .Users.Select( x=> new { x.FirstName, x.LastName,x.Email,x.UserName,x.Roles})
