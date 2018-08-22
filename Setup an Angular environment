@@ -13,4 +13,6 @@ https://angular.io/guide/quickstart
                                                 b)import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
                                    @ngModule    c) imports: [NgbModule.forRoot()]
                            in angular.json file  d) Styles-->   "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+10) To install fire base ---->     npm install angularfire2
+                                   npm install firebase@5.0.0
 
