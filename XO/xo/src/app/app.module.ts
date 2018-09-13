@@ -2,24 +2,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { CoursesComponent } from './courses/courses.component';
-import { CourseComponent } from './course/course.component';
-import { CoursesService } from './courses.service';
-
+import { PlayerComponent } from './player/player.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap'
+import { PlayerService } from './player.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CoursesComponent,
-    CourseComponent
+    PlayerComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    [NgbModule.forRoot()]
   ],
-  providers: [CoursesService
-  
-  
-  ],
+  providers: [PlayerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
